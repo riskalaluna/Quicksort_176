@@ -62,7 +62,16 @@ void q_short(int low, int high)
 		//search for an element less thanor equal to pivot
 		while ((arr[j] > pivot) && (j >= low)) //langkah 7
 		{j--; //langkah 8
-
-		}
+		cmp_count++;
+	}
+	cmp_count++;
+	if (i < j) //langkah 9
+		//if greator element is on left of the element
+	{
+		//swap the element at index i with the element at index j
+		swap(i, j);
+		mov_count++;
 	}
 }
+//j now containt the index of the last element in the sort list
+	if (low < j) //langkah 11
