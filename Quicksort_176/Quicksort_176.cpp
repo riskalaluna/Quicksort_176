@@ -61,19 +61,20 @@ void q_short(int low, int high)
 		cmp_count++;
 		//search for an element less thanor equal to pivot
 		while ((arr[j] > pivot) && (j >= low)) //langkah 7
-		{j--; //langkah 8
+		{
+			j--; //langkah 8
+			cmp_count++;
+		}
 		cmp_count++;
+		if (i < j) //langkah 9
+			//if greator element is on left of the element
+		{
+			//swap the element at index i with the element at index j
+			swap(i, j);
+			mov_count++;
+		}
 	}
-	cmp_count++;
-	if (i < j) //langkah 9
-		//if greator element is on left of the element
-	{
-		//swap the element at index i with the element at index j
-		swap(i, j);
-		mov_count++;
-	}
-}
-//j now containt the index of the last element in the sort list
+	//j now containt the index of the last element in the sort list
 	if (low < j) //langkah 11
 		//move to the pivot to its correct position in the list
 	{
@@ -82,3 +83,13 @@ void q_short(int low, int high)
 	}
 	//sort the list on the left of pivot using quick sort
 	q_short(low, j - 1); //langkah 12
+	//sort the list on the rifht of pivot using quick sort
+	q_short(j + 1, high); //langkah 13
+}
+void display() {
+	cout << "\n====================" << endl;
+	cout << "\n-sorted array" << endl;
+	cout << "\n====================" << endl;
+
+
+}
